@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ImageModel.qml</file>
+        <file>BrowserViewModel.qml</file>
+        <file>BrowserView.qml</file>
+        <file>img/btn_next.svg</file>
+        <file>img/btn_prev.svg</file>
+        <file>img/cat.png</file>
+        <file>img/cow.png</file>
+        <file>img/duck.png</file>
+        <file>img/panda.png</file>
+        <file>img/photo_browser_app_story1.png</file>
+        <file>img/photo_browser_app_story2.png</file>
+        <file>img/tiger.png</file>
+        <file>UT/tst_BrowserViewModel.qml</file>
+    </qresource>
+</RCC>
