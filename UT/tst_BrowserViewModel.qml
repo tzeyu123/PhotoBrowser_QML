@@ -52,6 +52,7 @@ Item {
             compare(testItem.imageSource, "lastImage")
         }
 
+        // test content is not relevant with test name
         function test_third_Image_get_previous_photo_return_second_image()
         {
             testItem.currentPhothoIndex = 2;
@@ -66,6 +67,7 @@ Item {
             compare(testItem.imageSource, "firstImage")
         }
 
+        // test name 應該可以更接近 acceptance criteria 的內容
         function test_image_source_is_first_photo_isNotFirstPhoto_return_false()
         {
             testItem.imageSource = moc_imagemodel.imageSource[0]
@@ -73,7 +75,7 @@ Item {
             compare(testItem.isNotFirstPhoto , false)
         }
 
-
+        // test name 應該可以更接近 acceptance criteria 的內容
         function test_image_source_is_last_photo_isNotLastPhot_return_false()
         {
             testItem.imageSource = moc_imagemodel.imageSource[3]

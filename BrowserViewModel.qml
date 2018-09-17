@@ -26,6 +26,7 @@ Item {
        }
     }
 
+    // 想想看, 有什麼可以不用這兩個 logic function 來決定 prev/next button visible
     QtObject {
         id: logic
         function isNotFirstPhoto() {
