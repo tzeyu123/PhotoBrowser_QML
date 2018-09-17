@@ -67,7 +67,7 @@ Item {
             compare(testItem.imageSource, "firstImage")
         }
 
-        // test name æ‡‰è©²å¯ä»¥æ›´æ¥è¿‘ acceptance criteria çš„å…§å®¹
+        // test name À³¸Ó¥i¥H§ó±µªñ acceptance criteria ªº¤º®e
         function test_image_source_is_first_photo_isNotFirstPhoto_return_false()
         {
             testItem.imageSource = moc_imagemodel.imageSource[0]
@@ -75,7 +75,7 @@ Item {
             compare(testItem.isNotFirstPhoto , false)
         }
 
-        // test name æ‡‰è©²å¯ä»¥æ›´æ¥è¿‘ acceptance criteria çš„å…§å®¹
+        // test name À³¸Ó¥i¥H§ó±µªñ acceptance criteria ªº¤º®e
         function test_image_source_is_last_photo_isNotLastPhot_return_false()
         {
             testItem.imageSource = moc_imagemodel.imageSource[3]
@@ -89,6 +89,17 @@ Item {
 
             compare(testItem.isNotFirstPhoto , false)
             compare(testItem.isNotLastPhoto , false)
+        }
+
+        function test_current_photo_is_second_photo_will_show_1()
+        {
+            testItem.currentPhothoIndex = 0;
+            compare(testItem.currentPhotoNum, 1)
+        }
+        
+        function test_4_image_sources_show_total_photo_count_is_4()
+        {
+            compare(testItem.totoalPhotoCount, 4)
         }
 
      }

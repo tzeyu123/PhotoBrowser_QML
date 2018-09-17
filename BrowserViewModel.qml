@@ -2,6 +2,8 @@ import QtQuick 2.0
 
 Item {
     property int  currentPhothoIndex: 0
+    property int  currentPhotoNum: currentPhothoIndex + 1
+    property int  totoalPhotoCount: imagemodel.imageSource.length
     property var  imageSource: imagemodel.imageSource[currentPhothoIndex]
     property bool isNotFirstPhoto: logic.isNotFirstPhoto()
     property bool isNotLastPhoto: logic.isNotLastPhoto()
