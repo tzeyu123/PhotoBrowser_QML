@@ -45,11 +45,12 @@ Item {
             compare(testItem.imageSource, "secondImage")
         }
 
-        function test_last_Image_get_next_photo_return_last_image()
+        function test_current_photo_is_last_image_click_next_button_display_first_image()
         {
-            testItem.currentPhothoIndex = 3;
+            testItem.currentPhothoIndex = 3
             testItem.getNextPhoto();
-            compare(testItem.imageSource, "lastImage")
+			
+            compare(testItem.imageSource, "firstImage")
         }
 
         // test content is not relevant with test name
@@ -60,11 +61,12 @@ Item {
             compare(testItem.imageSource, "lastImage")
         }
 
-        function test_first_Image_get_previous_photo_return_first_image()
+        function test_current_photo_is_first_image_click_previous_button_display_last_image()
         {
-            testItem.currentPhothoIndex = 0;
+            testItem.currentPhothoIndex = 0
             testItem.getPreviousPhoto();
-            compare(testItem.imageSource, "firstImage")
+			
+            compare(testItem.imageSource, "lastImage")
         }
 
         // test name 應該可以更接近 acceptance criteria 的內容
@@ -101,6 +103,9 @@ Item {
         {
             compare(testItem.totoalPhotoCount, 4)
         }
+		
+		
+
 
      }
 }

@@ -14,7 +14,7 @@ Rectangle
         anchors.verticalCenter: browser.verticalCenter
         x: browser.x - width - 5
         iconSource: "img/btn_prev.svg"
-        visible: viewmodel.isNotFirstPhoto
+        //visible: viewmodel.isNotFirstPhoto
         onClicked: {
             viewmodel.getPreviousPhoto();
         }
@@ -40,7 +40,7 @@ Rectangle
         anchors.verticalCenter: browser.verticalCenter
         x: browser.x + browser.width + 5
         iconSource: "img/btn_next.svg"
-        visible: viewmodel.isNotLastPhoto
+        //visible: viewmodel.isNotLastPhoto
         onClicked: {
             viewmodel.getNextPhoto();
         }

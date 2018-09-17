@@ -15,16 +15,23 @@ Item {
        var nextPhotoIndex = currentPhothoIndex + 1;
 
        if (nextPhotoIndex <= lastPhotoIndex) {
-            currentPhothoIndex = nextPhotoIndex;
+           currentPhothoIndex = nextPhotoIndex;
+       }
+       else {
+           currentPhothoIndex = 0;
        }
     }
 
     function getPreviousPhoto() {
 
        var previousPhotoIndex = currentPhothoIndex - 1;
+       var lastPhotoIndex = imagemodel.imageSource.length - 1;
 
        if (previousPhotoIndex >= 0) {
            currentPhothoIndex = previousPhotoIndex;
+       }
+       else {
+           currentPhothoIndex = lastPhotoIndex;
        }
     }
 
