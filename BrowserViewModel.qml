@@ -2,9 +2,10 @@ import QtQuick 2.0
 
 Item {
     property int  currentPhothoIndex: 0
+    property int  lastPhotoIndex: imagemodel.imageSource.length - 1
     property var  imageSource: imagemodel.imageSource[currentPhothoIndex]
-    property bool isNotFirstPhoto: logic.isNotFirstPhoto()
-    property bool isNotLastPhoto: logic.isNotLastPhoto()
+    property bool isNotFirstPhoto: (currentPhothoIndex === 0) ? false : true
+    property bool isNotLastPhoto: (currentPhothoIndex === lastPhotoIndex) ? false : true
     property ImageModel imagemodel: ImageModel{}
 
     function getNextPhoto() {
@@ -24,28 +25,5 @@ Item {
        if (previousPhotoIndex >= 0) {
            currentPhothoIndex = previousPhotoIndex;
        }
-    }
-
-    // 想想看, 有什麼可以不用這兩個 logic function 來決定 prev/next button visible
-    QtObject {
-        id: logic
-        function isNotFirstPhoto() {
-
-            if (imageSource === imagemodel.imageSource[0])
-            {
-                return false;
-            }
-            return true;
-        }
-
-        function isNotLastPhoto() {
-
-            var lastPhotoIndex = imagemodel.imageSource.length - 1;
-            if (imageSource === imagemodel.imageSource[lastPhotoIndex])
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }

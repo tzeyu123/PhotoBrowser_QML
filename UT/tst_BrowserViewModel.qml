@@ -52,12 +52,11 @@ Item {
             compare(testItem.imageSource, "lastImage")
         }
 
-        // test content is not relevant with test name
         function test_third_Image_get_previous_photo_return_second_image()
         {
             testItem.currentPhothoIndex = 2;
-            testItem.getNextPhoto();
-            compare(testItem.imageSource, "lastImage")
+            testItem.getPreviousPhoto();
+            compare(testItem.imageSource, "secondImage")
         }
 
         function test_first_Image_get_previous_photo_return_first_image()
@@ -67,18 +66,16 @@ Item {
             compare(testItem.imageSource, "firstImage")
         }
 
-        // test name 應該可以更接近 acceptance criteria 的內容
-        function test_image_source_is_first_photo_isNotFirstPhoto_return_false()
+        function test_image_source_is_first_photo_previous_button_is_not_visible()
         {
-            testItem.imageSource = moc_imagemodel.imageSource[0]
+            testItem.currentPhothoIndex = 0;
 
             compare(testItem.isNotFirstPhoto , false)
         }
 
-        // test name 應該可以更接近 acceptance criteria 的內容
-        function test_image_source_is_last_photo_isNotLastPhot_return_false()
+        function test_image_source_is_last_photo_next_button_is_not_vivisble()
         {
-            testItem.imageSource = moc_imagemodel.imageSource[3]
+            testItem.currentPhothoIndex = 3;
 
             compare(testItem.isNotLastPhoto , false)
         }
