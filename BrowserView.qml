@@ -3,17 +3,21 @@ import QtQuick.Window 2.11
 import QtQuick.Controls 1.4
 import "img"
 
-Rectangle   // { 位置:　Rectangle｛
+Rectangle
 {
-    anchors.fill: parent
+    x: 0
+    y: 0
+    width: 640
+    height: 480
 
     Button {
+        id: previousbutton
         width: 50
         height: 50
         anchors.verticalCenter: browser.verticalCenter
         x: browser.x - width - 5
         iconSource: "img/btn_prev.svg"
-        visible: viewmodel.isNotFirstPhoto
+        visible: viewmodel.isPreviousButtonVisible
         onClicked: {
             viewmodel.getPreviousPhoto();
         }
@@ -34,12 +38,13 @@ Rectangle   // { 位置:　Rectangle｛
     }
 
     Button {
+        id: nextbutton
         width: 50
         height: 50
         anchors.verticalCenter: browser.verticalCenter
         x: browser.x + browser.width + 5
         iconSource: "img/btn_next.svg"
-        visible: viewmodel.isNotLastPhoto
+        visible: viewmodel.isNextButtonVisible
         onClicked: {
             viewmodel.getNextPhoto();
         }

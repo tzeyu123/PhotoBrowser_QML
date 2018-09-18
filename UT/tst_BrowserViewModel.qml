@@ -70,23 +70,22 @@ Item {
         {
             testItem.currentPhothoIndex = 0;
 
-            compare(testItem.isNotFirstPhoto , false)
+            compare(testItem.isPreviousButtonVisible , false)
         }
 
         function test_image_source_is_last_photo_next_button_is_not_vivisble()
         {
             testItem.currentPhothoIndex = 3;
 
-            compare(testItem.isNotLastPhoto , false)
+            compare(testItem.isNextButtonVisible , false)
         }
 
-        // test case naming 貼近要測的內容
-        function test_image_source_is_only_one_photo_isNotLastPhot_and_isNotFirstPhoto_return_false()
+        function test_image_source_is_only_one_photo_next_button_and_previous_button_should_be_not_visible()
         {
             testItem.imagemodel = moc_one_imagemodel
 
-            compare(testItem.isNotFirstPhoto , false)
-            compare(testItem.isNotLastPhoto , false)
+            compare(testItem.isPreviousButtonVisible , false)
+            compare(testItem.isNextButtonVisible , false)
         }
 
      }
