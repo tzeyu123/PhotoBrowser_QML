@@ -3,8 +3,7 @@ import QtQuick.Window 2.11
 import QtQuick.Controls 1.4
 import "img"
 
-Rectangle
-{
+Rectangle {
     x: 0
     y: 0
     width: 640
@@ -30,7 +29,7 @@ Rectangle
         x: (parent.width - width) / 2
         y: (parent.height - height) / 2
 
-        Image{
+        Image {
             id: image
             anchors.fill: parent
             source: viewmodel.imageSource
