@@ -2,9 +2,13 @@ import QtQuick 2.0
 
 Item {
     property int  currentPhothoIndex: 0
+    property int  lastPhotoIndex: imagemodel.imageSource.length - 1
+    property string  currentPhotoNumber: (currentPhothoIndex + 1).toString()
+    property string  totoalPhotoCount: (imagemodel.imageSource.length).toString()
     property var  imageSource: imagemodel.imageSource[currentPhothoIndex]
-    property bool isNotFirstPhoto: logic.isNotFirstPhoto()
-    property bool isNotLastPhoto: logic.isNotLastPhoto()
+    property bool isPreviousButtonVisible: (currentPhothoIndex === 0) ? false : true
+    property bool isNextButtonVisible: (currentPhothoIndex === lastPhotoIndex) ? false : true
+
     property ImageModel imagemodel: ImageModel{}
 
     function getNextPhoto() {
@@ -24,27 +28,5 @@ Item {
        if (previousPhotoIndex >= 0) {
            currentPhothoIndex = previousPhotoIndex;
        }
-    }
-
-    QtObject {
-        id: logic
-        function isNotFirstPhoto() {
-
-            if (imageSource === imagemodel.imageSource[0])
-            {
-                return false;
-            }
-            return true;
-        }
-
-        function isNotLastPhoto() {
-
-            var lastPhotoIndex = imagemodel.imageSource.length - 1;
-            if (imageSource === imagemodel.imageSource[lastPhotoIndex])
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }

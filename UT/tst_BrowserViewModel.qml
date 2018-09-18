@@ -8,7 +8,7 @@ Item {
 
 
     ImageModel {
-        id: moc_imagemodel
+        id: moc_four_imagemodel
         imageSource: ["firstImage", "secondImage", "thirdImage", "lastImage"]
     }
 
@@ -20,7 +20,7 @@ Item {
     Loader {
         id: loader
         sourceComponent: BrowserViewModel {
-            imagemodel: moc_imagemodel
+            imagemodel: moc_four_imagemodel
         }
     }
 
@@ -55,8 +55,8 @@ Item {
         function test_third_Image_get_previous_photo_return_second_image()
         {
             testItem.currentPhothoIndex = 2;
-            testItem.getNextPhoto();
-            compare(testItem.imageSource, "lastImage")
+            testItem.getPreviousPhoto();
+            compare(testItem.imageSource, "secondImage")
         }
 
         function test_first_Image_get_previous_photo_return_first_image()
@@ -66,27 +66,38 @@ Item {
             compare(testItem.imageSource, "firstImage")
         }
 
-        function test_image_source_is_first_photo_isNotFirstPhoto_return_false()
+        function test_image_source_is_first_photo_previous_button_is_not_visible()
         {
-            testItem.imageSource = moc_imagemodel.imageSource[0]
+            testItem.currentPhothoIndex = 0;
 
-            compare(testItem.isNotFirstPhoto , false)
+            compare(testItem.isPreviousButtonVisible , false)
         }
 
-
-        function test_image_source_is_last_photo_isNotLastPhot_return_false()
+        function test_image_source_is_last_photo_next_button_is_not_vivisble()
         {
-            testItem.imageSource = moc_imagemodel.imageSource[3]
+            testItem.currentPhothoIndex = 3;
 
-            compare(testItem.isNotLastPhoto , false)
+            compare(testItem.isNextButtonVisible , false)
         }
 
-        function test_image_source_is_only_one_photo_isNotLastPhot_and_isNotFirstPhoto_return_false()
+        function test_image_source_is_only_one_photo_next_button_and_previous_button_should_be_not_visible()
         {
             testItem.imagemodel = moc_one_imagemodel
 
-            compare(testItem.isNotFirstPhoto , false)
-            compare(testItem.isNotLastPhoto , false)
+            compare(testItem.isPreviousButtonVisible , false)
+            compare(testItem.isNextButtonVisible , false)
+        }
+
+        function test_current_photo_is_second_photo_number_should_show_1()
+        {
+            testItem.currentPhothoIndex = 0;
+            compare(testItem.currentPhotoNumber, "1")
+        }
+
+        function test_4_images_show_total_photo_count_is_4()
+        {
+            testItem.imagemodel = moc_four_imagemodel;
+            compare(testItem.totoalPhotoCount, "4")
         }
 
      }
