@@ -66,27 +66,6 @@ Item {
             compare(testItem.imageSource, "lastImage")
         }
 
-//        function test_image_source_is_first_photo_previous_button_is_not_visible()
-//        {
-//            testItem.currentPhothoIndex = 0;
-
-//            compare(testItem.isPreviousButtonVisible , false)
-//        }
-
-//        function test_image_source_is_last_photo_next_button_is_not_vivisble()
-//        {
-//            testItem.currentPhothoIndex = 3;
-
-//            compare(testItem.isNextButtonVisible , false)
-//        }
-
-//        function test_image_source_is_only_one_photo_next_button_and_previous_button_should_be_not_visible()
-//        {
-//            testItem.imagemodel = moc_one_imagemodel
-
-//            compare(testItem.isPreviousButtonVisible , false)
-//            compare(testItem.isNextButtonVisible , false)
-//        }
 
         function test_current_photo_is_second_photo_number_should_show_1()
         {
