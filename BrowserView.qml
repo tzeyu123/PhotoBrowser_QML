@@ -3,8 +3,7 @@ import QtQuick.Window 2.11
 import QtQuick.Controls 1.4
 import "img"
 
-// { 位置
-Rectangle
+Rectangle   // { 位置:　Rectangle｛
 {
     anchors.fill: parent
 

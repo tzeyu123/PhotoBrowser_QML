@@ -80,6 +80,7 @@ Item {
             compare(testItem.isNotLastPhoto , false)
         }
 
+        // test case naming 貼近要測的內容
         function test_image_source_is_only_one_photo_isNotLastPhot_and_isNotFirstPhoto_return_false()
         {
             testItem.imagemodel = moc_one_imagemodel
