@@ -113,5 +113,8 @@ Item {
             testItem.getPreviousPhoto();
             compare(testItem.currentPhotoNumber, "3")
         }
+
+        // 是不是要補個 index = 4, click next 會回到 photonumber = 1
+        // 是不是要補個 index = 0, click prev 會回到 photonumber = 3
      }
 }
