@@ -16,7 +16,6 @@ Rectangle {
         anchors.verticalCenter: browser.verticalCenter
         x: browser.x - width - 5
         iconSource: "img/btn_prev.svg"
-        visible: viewmodel.isPreviousButtonVisible
         onClicked: {
             viewmodel.getPreviousPhoto();
         }
@@ -43,7 +42,6 @@ Rectangle {
         anchors.verticalCenter: browser.verticalCenter
         x: browser.x + browser.width + 5
         iconSource: "img/btn_next.svg"
-        visible: viewmodel.isNextButtonVisible
         onClicked: {
             viewmodel.getNextPhoto();
         }
