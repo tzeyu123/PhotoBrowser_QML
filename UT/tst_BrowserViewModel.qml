@@ -100,7 +100,18 @@ Item {
             compare(testItem.totoalPhotoCount, "4")
         }
 
-        // 應該可以多寫個 case 是測切換的時候, currentPhotoNumber 會不會 change
+        function test_number_of_current_image_is_1_click_next_button_number_shoud_be_2()
+        {
+            testItem.currentPhothoIndex = 0;
+            testItem.getNextPhoto();
+            compare(testItem.currentPhotoNumber, "2")
+        }
 
+        function test_number_of_current_image_is_4_click_previous_button_number_shoud_be_3()
+        {
+            testItem.currentPhothoIndex = 3;
+            testItem.getPreviousPhoto();
+            compare(testItem.currentPhotoNumber, "3")
+        }
      }
 }
