@@ -100,5 +100,7 @@ Item {
             compare(testItem.totoalPhotoCount, "4")
         }
 
+        // 應該可以多寫個 case 是測切換的時候, currentPhotoNumber 會不會 change
+
      }
 }
