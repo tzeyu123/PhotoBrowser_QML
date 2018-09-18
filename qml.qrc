@@ -14,5 +14,6 @@
         <file>img/photo_browser_app_story2.png</file>
         <file>img/tiger.png</file>
         <file>UT/tst_BrowserViewModel.qml</file>
+        <file>IndicatorView.qml</file>
     </qresource>
 </RCC>

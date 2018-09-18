@@ -49,6 +49,16 @@ Rectangle {
         }
     }
 
+    IndicatorView {
+        anchors {
+            top: browser.bottom
+            horizontalCenter: browser.horizontalCenter
+        }
+
+        currentPhotoNum: viewmodel.currentPhotoNumber
+        totalPhotoCount: viewmodel.totoalPhotoCount
+    }
+
     BrowserViewModel {
         id: viewmodel
     }

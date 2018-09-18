@@ -8,7 +8,7 @@ Item {
 
 
     ImageModel {
-        id: moc_imagemodel
+        id: moc_four_imagemodel
         imageSource: ["firstImage", "secondImage", "thirdImage", "lastImage"]
     }
 
@@ -20,7 +20,7 @@ Item {
     Loader {
         id: loader
         sourceComponent: BrowserViewModel {
-            imagemodel: moc_imagemodel
+            imagemodel: moc_four_imagemodel
         }
     }
 
@@ -86,6 +86,18 @@ Item {
 
             compare(testItem.isPreviousButtonVisible , false)
             compare(testItem.isNextButtonVisible , false)
+        }
+
+        function test_current_photo_is_second_photo_number_should_show_1()
+        {
+            testItem.currentPhothoIndex = 0;
+            compare(testItem.currentPhotoNumber, "1")
+        }
+
+        function test_4_images_show_total_photo_count_is_4()
+        {
+            testItem.imagemodel = moc_four_imagemodel;
+            compare(testItem.totoalPhotoCount, "4")
         }
 
      }
